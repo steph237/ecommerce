@@ -60,6 +60,11 @@ flutter:
   assets:
     - assets/images/headset.png
     - assets/images/bg.jpg
+    -  assets/images/girl.jpg
+    - assets/images/white.jpg
+    - assets/images/profile.jpg
+
+
 
 
 

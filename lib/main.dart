@@ -5,8 +5,6 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,26 +15,23 @@ class MyApp extends StatelessWidget {
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.menu),
-
               onPressed: () {},
             ), //IconButton
           ],
           backgroundColor: Colors.black,
           elevation: 50.0,
-          leading: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Material(
-              shape: new CircleBorder(),
+          leading: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("assets/images/white.jpg"),
             ),
           ),
         ),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/bg.jpg"),
-                fit: BoxFit.cover),
+                image: AssetImage("assets/images/bg.jpg"), fit: BoxFit.cover),
           ),
-
           child: Column(
             children: <Widget>[
               Stack(
@@ -47,33 +42,39 @@ class MyApp extends StatelessWidget {
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/headset.png'),
-
-
                       ),
-
                     ),
                     margin: const EdgeInsets.all(30),
                   ),
-
-
-                  Padding(
-                    padding: EdgeInsets.all(15), //apply padding to all four sides
-                    child:Text("Head-\nphones",  style: TextStyle(  color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      height: 1, fontSize: 40,
+                  const Padding(
+                    padding: EdgeInsets.all(15),
+                    //apply padding to all four sides
+                    child: Text(
+                      "Head-\nphones",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        height: 1,
+                        fontSize: 40,
+                      ),
                     ),
                   ),
-                  ),
-
                 ],
               ),
-              
-             
-              const Text('JBL T460BT',
-              style: TextStyle( fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold, height: 2),
+              const Text(
+                'JBL T460BT',
+                style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    height: 2),
               ),
-              const Text('Extra Bass Wireless',
-                style: TextStyle(  color: Colors.white, fontWeight: FontWeight.bold, height: 1),
+              const Text(
+                'Extra Bass Wireless',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    height: 1),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -83,24 +84,24 @@ class MyApp extends StatelessWidget {
                   primary: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40),
-
                   ),
-                  padding: const EdgeInsets.only(left: 60, right:60),
+                  padding: const EdgeInsets.only(left: 60, right: 60),
                 ),
-
                 child: const Text('Get it now'),
               ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(width: 40),
                   const Icon(
-                    Icons.skip_previous,
+                    Icons.arrow_back_ios,
                     color: Colors.white,
-                    size: 24.0,
-
+                    // size: 24.0,
                   ),
-
+                  const SizedBox(
+                    width: 50,
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       // Add your on pressed event here
@@ -109,28 +110,25 @@ class MyApp extends StatelessWidget {
                       primary: Colors.blueGrey.shade900,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40),
-
                       ),
-                      padding: const EdgeInsets.only(left: 20, right:20),
+                      padding: const EdgeInsets.only(left: 20, right: 20),
                     ),
-
                     child: const Text('01 of 05'),
                   ),
-
-                  const Icon(
-                    Icons.skip_next_sharp,
-                    color: Colors.white,
-                    size: 24.0,
-
+                  const SizedBox(
+                    width: 50,
                   ),
-
-
+                  const Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                    // size: 24.0,
+                  ),
+                  const SizedBox(
+                    width: 50,
+                  ),
                 ],
               )
-
             ],
-
-
           ),
         ),
       ),
