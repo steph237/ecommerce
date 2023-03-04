@@ -106,7 +106,7 @@ class MyApp extends StatelessWidget {
                       // Add your on pressed event here
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blueGrey,
+                      primary: Colors.blueGrey.shade900,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40),
 
