@@ -39,19 +39,36 @@ class MyApp extends StatelessWidget {
 
           child: Column(
             children: <Widget>[
-              Container(
-                height: 400.0,
-                width: 400.0,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
+              Stack(
+                children: <Widget>[
+                  Container(
+                    height: 400.0,
+                    width: 400.0,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
                         image: AssetImage('assets/images/headset.png'),
 
 
-                    ),
+                      ),
 
-                ),
-                margin: const EdgeInsets.all(30),
+                    ),
+                    margin: const EdgeInsets.all(30),
+                  ),
+
+
+                  Padding(
+                    padding: EdgeInsets.all(15), //apply padding to all four sides
+                    child:Text("Head-\nphones",  style: TextStyle(  color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      height: 1, fontSize: 40,
+                    ),
+                  ),
+                  ),
+
+                ],
               ),
+              
+             
               const Text('JBL T460BT',
               style: TextStyle( fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold, height: 2),
               ),
@@ -89,7 +106,7 @@ class MyApp extends StatelessWidget {
                       // Add your on pressed event here
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.grey,
+                      primary: Colors.blueGrey,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40),
 
