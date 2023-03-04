@@ -48,9 +48,24 @@ class MyApp extends StatelessWidget {
 
                 ),
               ),
-              Container(
-                child: const Text('JBL T460BT'),
-              )
+              const Text('JBL T460BT',
+              style: TextStyle( fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold, height: 2),
+              ),
+              const Text('Extra Bass Wireless',
+                style: TextStyle(  color: Colors.white, fontWeight: FontWeight.bold, height: 1),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Add your on pressed event here
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                ),
+                child: const Text('Get it now'),
+              ),
             ],
 
 
