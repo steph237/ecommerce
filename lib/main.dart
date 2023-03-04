@@ -5,6 +5,8 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,9 +46,11 @@ class MyApp extends StatelessWidget {
                     image: DecorationImage(
                         image: AssetImage('assets/images/headset.png'),
 
+
                     ),
 
                 ),
+                margin: const EdgeInsets.all(30),
               ),
               const Text('JBL T460BT',
               style: TextStyle( fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold, height: 2),
@@ -69,6 +73,44 @@ class MyApp extends StatelessWidget {
 
                 child: const Text('Get it now'),
               ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.skip_previous,
+                    color: Colors.white,
+                    size: 24.0,
+
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      // Add your on pressed event here
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.grey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+
+                      ),
+                      padding: const EdgeInsets.only(left: 20, right:20),
+                    ),
+
+                    child: const Text('01 of 05'),
+                  ),
+
+                  const Icon(
+                    Icons.skip_next_sharp,
+                    color: Colors.white,
+                    size: 24.0,
+
+                  ),
+
+
+                ],
+              )
+
             ],
 
 
