@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.settings),
-              tooltip: 'Setting Icon',
+              icon: const Icon(Icons.menu),
+
               onPressed: () {},
             ), //IconButton
           ],
