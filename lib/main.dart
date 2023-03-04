@@ -62,8 +62,11 @@ class MyApp extends StatelessWidget {
                   primary: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40),
+
                   ),
+                  padding: const EdgeInsets.only(left: 60, right:60),
                 ),
+
                 child: const Text('Get it now'),
               ),
             ],
