@@ -1,10 +1,13 @@
-
+import 'package:carousel_slider/carousel_slider.dart';
 import "package:flutter/material.dart";
 import 'circle.dart';
 import 'know_more.dart';
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +40,11 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
-                    height: 400.0,
-                    width: 400.0,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/headset.png'),
-                      ),
-                    ),
-                    margin: const EdgeInsets.all(30),
+                  ListView(
+                    shrinkWrap: true,
+                    children: [
+                     CarouselDemo()
+                    ],
                   ),
                   const Padding(
                     padding: EdgeInsets.all(15),
@@ -70,12 +69,18 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     height: 2),
               ),
+              const SizedBox(
+                height: 15,
+              ),
               const Text(
                 'Extra Bass Wireless',
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     height: 1),
+              ),
+              const SizedBox(
+                height: 15,
               ),
               Builder(builder: (context) {
                 return ElevatedButton(
@@ -103,11 +108,14 @@ class MyApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(width: 40),
-                  const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                    // size: 24.0,
+                  IconButton(
+                      icon: const Icon( Icons.arrow_back_ios),
+                      color: Colors.white,
+                      onPressed: (){}
+
                   ),
+
+
                   const SizedBox(
                     width: 50,
                   ),
@@ -127,20 +135,83 @@ class MyApp extends StatelessWidget {
                   const SizedBox(
                     width: 50,
                   ),
-                  const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                    // size: 24.0,
+                  IconButton(
+                      icon: const Icon( Icons.arrow_forward_ios),
+                      color: Colors.white,
+                      onPressed: (){}
+
                   ),
+
                   const SizedBox(
                     width: 50,
                   ),
+
+                  ]
+              ),
                 ],
               )
-            ],
+
           ),
         ),
-      ),
-    );
+      );
+
   }
+}
+
+class CarouselDemo extends StatelessWidget{
+  CarouselController buttonCarouselController = CarouselController();
+
+  CarouselDemo({super.key});
+
+  get child => null;
+
+  @override
+  Widget build(BuildContext context) => Column(
+      children: <Widget>[
+        CarouselSlider(
+
+          carouselController: buttonCarouselController,
+          items: [
+            Container(
+
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/headset.png'),
+                ),
+              ),
+              margin: const EdgeInsets.all(30),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/headset2.png'),
+                ),
+              ),
+              margin: const EdgeInsets.all(30),
+            ),
+            Container(
+
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/headset7.png'),
+                ),
+              ),
+              margin: const EdgeInsets.all(30),
+            ),
+          ],
+          options: CarouselOptions(
+            height: 400.0,
+            enlargeCenterPage: true,
+            autoPlay: true,
+            aspectRatio: 16 / 9,
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enableInfiniteScroll: true,
+            autoPlayAnimationDuration:
+            Duration(milliseconds: 800),
+            viewportFraction: 0.8,
+          ),
+        ),
+     
+      ]
+  );
 }
